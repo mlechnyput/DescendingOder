@@ -18,17 +18,20 @@ public class Main {
     }
 
     public static void descendingOrder(String str) {
-        int[] arr = new int[str.length()];
+        Integer[] arr = new Integer[str.length()];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = Character.getNumericValue(str.charAt(i));
         }
 
-        Arrays.sort(arr);
-        System.out.println("Number with descending order of digits:");
-        for (int i = arr.length - 1; i >= 0; i--) {
-            System.out.print(arr[i]);
-        }
+        Arrays.sort(arr, Collections.reverseOrder());
 
+        String strDescend="";
+        for (int i = 0; i <arr.length; i++) {
+            strDescend+= arr[i].toString();
+        }
+        long numDescend= Integer.parseInt(strDescend);
+        System.out.println("Number with descending order of digits:");
+        System.out.print(numDescend);
     }
 
 }
